@@ -1,0 +1,17 @@
+{{#if errorMessage}}
+    <div class="container">
+        <p>{{errorMessage}}</p>
+    </div>
+{{/if}}
+
+<form action="/reset" method="POST">
+    <h1>Сброс пароля</h1>
+    <div class="mb-3">
+        <label for="email" class="form-label">E-mail</label>
+        <input type="email" class="form-control" name="email" id="email" placeholder="Введите email" required>
+    </div>
+
+    <input type="hidden" name="_csrf" value="{{csrfToken}}">
+
+    <button type="submit" class="btn btn-primary">Сбросить</button>
+</form>

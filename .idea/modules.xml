@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/express-project(Mongoose).iml" filepath="$PROJECT_DIR$/.idea/express-project(Mongoose).iml" />
+      <module fileurl="file://$PROJECT_DIR$/../react-shop/.idea/react-shop.iml" filepath="$PROJECT_DIR$/../react-shop/.idea/react-shop.iml" />
+    </modules>
+  </component>
+</project>

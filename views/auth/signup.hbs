@@ -1,0 +1,29 @@
+{{#if errorMessage}}
+    <div class="container">
+        <p>{{errorMessage}}</p>
+    </div>
+{{/if}}
+
+<form action="/signup" method="POST" novalidate>
+    <h1>Регистрация</h1>
+    <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" class="form-control" name="username" id="username" placeholder="Введите username" value="{{oldInput.username}}">
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Введите e-mail" value="{{oldInput.email}}">
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Пароль</label>
+        <input type="password" class="form-control" name="password" id="password" placeholder="Введите пароль" value="{{oldInput.password}}">
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Повторный пароль</label>
+        <input type="password" class="form-control" name="confirmPassword" id="confirmPassword" placeholder="Введите пароль" value="{{oldInput.confirmPassword}}">
+    </div>
+
+    <input type="hidden" name="_csrf" value="{{csrfToken}}">
+
+    <button type="submit" class="btn btn-primary">Регистрация</button>
+</form>

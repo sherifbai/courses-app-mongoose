@@ -1,0 +1,90 @@
+<!--suppress ALL -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 30px">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">Гланая страница</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav">
+                <li class="nav-item"></li>
+                {{#if isCourses}}
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/courses">Курсы</a>
+                    </li>
+                {{else}}
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/courses">Курсы</a>
+                    </li>
+                {{/if}}
+                {{#if isAuthenticated}}
+                    {{#if isCart}}
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/cart">Корзинка</a>
+                        </li>
+                    {{else}}
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/cart">Корзинка</a>
+                        </li>
+                    {{/if}}
+                    {{#if isOrder}}
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/order">Заказы</a>
+                        </li>
+                    {{else}}
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/order">Заказы</a>
+                        </li>
+                    {{/if}}
+                    {{#if isAdd}}
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/add">Добавить курс</a>
+                        </li>
+                    {{else}}
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/add">Добавить курс</a>
+                        </li>
+                    {{/if}}
+                    {{#if isAdmin}}
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/admin">Администрация</a>
+                        </li>
+                    {{else}}
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/admin">Администрация</a>
+                        </li>
+                    {{/if}}
+                {{/if}}
+            </ul>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav">
+                {{#if isAuthenticated}}
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/logout">Выйти</a>
+                    </li>
+                {{else}}
+                    {{#if isLogin}}
+                        <li class="nav-item" style="float: right">
+                            <a class="nav-link active" href="/login">Войти</a>
+                        </li>
+                    {{else}}
+                        <li class="nav-item" style="float: right">
+                            <a class="nav-link" href="/login">Войти</a>
+                        </li>
+                    {{/if}}
+                    {{#if isSignUp}}
+                        <li class="nav-item" style="float: right">
+                            <a class="nav-link active" href="/signup">Регистраци</a>
+                        </li>
+                    {{else}}
+                        <li class="nav-item" style="float: right">
+                            <a class="nav-link" href="/signup">Регистраци</a>
+                        </li>
+                    {{/if}}
+                {{/if}}
+            </ul>
+        </div>
+    </div>
+</nav>

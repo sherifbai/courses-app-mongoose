@@ -1,0 +1,29 @@
+{{#if orders.length}}
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>ID Заказа</th>
+            <th>Общяя сумма</th>
+            <th>Заказчик</th>
+            <th>Действие</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each orders}}
+                <tr>
+                    <td>{{_id}}</td>
+                    <td><p class="card-text price">{{overallSum}}</p></td>
+                    <td>{{user.username}}</td>
+                    <td>
+                        <a href="/order/courses/{{_id}}" class="btn btn-primary">Посмотреть заказ</a>
+                        {{#if isCreator}}
+                            <a href="/order/remove/{{_id}}" class="btn btn-danger">Удалить</a>
+                        {{/if}}
+                    </td>
+                </tr>
+        {{/each}}
+        </tbody>
+    </table>
+{{else}}
+    <h1>Заказов пока нету</h1>
+{{/if}}

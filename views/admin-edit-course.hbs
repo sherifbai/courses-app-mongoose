@@ -1,0 +1,20 @@
+<form action="/admin/edit" method="POST" enctype="multipart/form-data">
+    <h1>{{title}}</h1>
+    <div class="mb-3">
+        <label for="title" class="form-label">Название курса</label>
+        <input type="text" class="form-control" name="title" id="title" value="{{course.title}}">
+    </div>
+    <div class="mb-3">
+        <label for="price" class="form-label">Цена курса</label>
+        <input type="number" class="form-control" id="price" name="price" value="{{course.price}}">
+    </div>
+    <div class="mb-3">
+        <label for="image" class="form-label">Url картинки</label>
+        <input type="file" class="form-control" name="image" id="image" value="{{course.imgUrl}}">
+    </div>
+    <input type="hidden" name="id" value="{{course._id}}">
+
+    <input type="hidden" name="_csrf" value="{{csrfToken}}">
+
+    <button type="submit" class="btn btn-primary">Редактировать курс</button>
+</form>

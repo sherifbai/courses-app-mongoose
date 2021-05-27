@@ -1,0 +1,23 @@
+{{#if errorMessage}}
+    <div class="container">
+        <p>{{errorMessage}}</p>
+    </div>
+{{/if}}
+
+<form action="/login" method="POST" novalidate>
+    <h1>Войти</h1>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Введите e-mail" value="{{oldInput.email}}">
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Пароль</label>
+        <input type="password" class="form-control" name="password" id="password" placeholder="Введите пароль" value="{{oldInput.password}}">
+    </div>
+
+    <input type="hidden" name="_csrf" value="{{csrfToken}}">
+
+    <button type="submit" class="btn btn-primary">Войти</button>
+</form>
+
+<a href="/reset">Забыли пароль?</a>

@@ -1,0 +1,18 @@
+{{#if courses.length}}
+    <div class="row" style="display: flex; align-items: center; justify-content: space-between">
+        {{#each courses}}
+            <div class="card-img" style="width: 18rem;">
+                <img src="{{imgUrl}}" class="card-img-top" alt="{{imgUrl}}">
+                <hr>
+                <div class="card-body">
+                    <h5 class="card-title">{{title}}</h5>
+                    <p class="card-text price">{{price}}</p>
+                    <a href="/courses/{{_id}}" class="btn btn-primary">Открыть курс</a>
+                    <a href="/cart/{{_id}}" class="btn btn-primary">Купить</a>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+{{else}}
+    <h1>Курсов пока нету</h1>
+{{/if}}

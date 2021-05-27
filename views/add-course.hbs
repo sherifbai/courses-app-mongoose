@@ -1,0 +1,26 @@
+{{#if errorMessage}}
+    <div class="container">
+        {{errorMessage}}
+    </div>
+{{/if}}
+
+<form action="/add" method="POST" novalidate enctype="multipart/form-data">
+    <h1>Добавление курса</h1>
+    <div class="mb-3">
+        <label for="title" class="form-label">Название курса</label>
+        <input type="text" class="form-control" name="title" id="title" placeholder="Введите название"
+               value="{{oldInput.title}}">
+    </div>
+    <div class="mb-3">
+        <label for="price" class="form-label">Цена курса</label>
+        <input type="number" class="form-control" id="price" name="price" placeholder="Введите цену"
+               value="{{oldInput.price}}">
+    </div>
+    <div class="mb-3">
+        <label for="image" class="form-label">Url картинки</label>
+    </div>
+
+    <input type="hidden" name="_csrf" value="{{csrfToken}}">
+
+    <button type="submit" class="btn btn-primary">Добавить курс</button>
+</form>
